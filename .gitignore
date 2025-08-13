@@ -1,0 +1,12 @@
+.env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+env/
+fastapi_env/
+*.db
+*.sqlite3
+.DS_Store
+Thumbs.db
