@@ -21,7 +21,12 @@ def send_otp(data: PhoneNumberInput):
     expiry = time.time() + int(os.getenv("OTP_EXPIRY", 300))
     otp_store[data.phone] = (otp, expiry)
     print(f"OTP for {data.phone} is {otp}")  # Dev only
-    return {"message": "OTP sent successfully (check terminal)"}
+    # return {"message": "OTP sent successfully (check terminal)"}
+    return {
+    "message": "OTP sent successfully",
+    "otp": otp
+}
+
 
 @router.post("/verify-otp")
 def verify_otp(data: OTPVerifyInput):
